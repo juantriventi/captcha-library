@@ -61,23 +61,19 @@ function addCaptchaToForm(form, buttonColor, textColor, verifiedColor, hoverColo
     // Monitorear movimiento del mouse
     document.addEventListener("mousemove", function() {
         userInteracted = true; // Cambiar a true si el usuario mueve el mouse
-        console.log("User interacted with mouse.");
     });
 
     // Monitorear interacciones táctiles
     document.addEventListener("touchstart", function() {
         userInteracted = true; // Cambiar a true si el usuario toca la pantalla
-        console.log("User interacted with touch.");
     });
 
     // Al hacer clic en el botón "No soy un robot"
     verifyButton.onclick = function() {
-        console.log("CAPTCHA verification clicked.");
 
         // Verificar si el usuario ha interactuado
         if (!userInteracted) {
             alert('Por favor interactúa con la página antes de verificar.');
-            console.log("User has not interacted with the page.");
             return;
         }
 
@@ -85,7 +81,6 @@ function addCaptchaToForm(form, buttonColor, textColor, verifiedColor, hoverColo
         verifyButton.innerText = '¡No eres un robot!';
         verifyButton.style.backgroundColor = verifiedColor; // Cambiar color para indicar éxito
         captchaVerified = true; // Marcar CAPTCHA como verificado
-        console.log("CAPTCHA verified.");
 
         // Cambiar el comportamiento de hover después de la verificación
         verifyButton.onmouseover = null; // Desactivar hover
@@ -94,22 +89,17 @@ function addCaptchaToForm(form, buttonColor, textColor, verifiedColor, hoverColo
 
     // Insertar el botón "No soy un robot" justo antes del botón de envío
     form.insertBefore(verifyButton, submitButton);
-    console.log("CAPTCHA button added to the form.");
 
     // Comportamiento de envío del formulario
     form.onsubmit = function(e) {
-        console.log("Form submit event triggered.");
         if (!captchaVerified) {
             e.preventDefault(); // Prevenir el envío si no ha sido verificado
-            console.log("CAPTCHA not verified, preventing form submission.");
 
             // Añadir animación de vibración al botón CAPTCHA
             verifyButton.classList.add('shake');
-            console.log("Shake class added to CAPTCHA button.");
 
             setTimeout(() => {
                 verifyButton.classList.remove('shake'); // Remover la clase después de la animación
-                console.log("Shake class removed from CAPTCHA button.");
             }, 500);
 
             return; // Evitar que el formulario se envíe
@@ -129,7 +119,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (forms.length > 0) {
         forms.forEach((form) => {
-            console.log("Form found, adding CAPTCHA.");
             addCaptchaToForm(form, buttonColor, textColor, verifiedColor, hoverColor); // Llamar a la función para añadir el captcha
         });
     } else {
