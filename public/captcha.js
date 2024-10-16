@@ -3,7 +3,6 @@ let captchaVerified = false; // Variable para verificar el estado del CAPTCHA
 
 // Función para verificar el CAPTCHA al hacer clic en "No soy un robot"
 function addCaptchaToForm(form, buttonColor, textColor, verifiedColor, hoverColor) {
-    console.log("Adding CAPTCHA to form");
 
     // Crear el botón de verificación
     const verifyButton = document.createElement('button');
@@ -123,10 +122,10 @@ function addCaptchaToForm(form, buttonColor, textColor, verifiedColor, hoverColo
 // Esperar a que el DOM se cargue completamente
 document.addEventListener("DOMContentLoaded", function() {
     const forms = document.querySelectorAll('form'); // Seleccionar todos los formularios en la página
-    const buttonColor = document.querySelector('script[src="http://localhost:3000/captcha.js"]').getAttribute('data-button-color') || '#4b90cd'; // Color por defecto
-    const textColor = document.querySelector('script[src="http://localhost:3000/captcha.js"]').getAttribute('data-text-color') || '#ffffff'; // Color de texto por defecto
-    const verifiedColor = document.querySelector('script[src="http://localhost:3000/captcha.js"]').getAttribute('data-verified-color') || '#ffffff'; // Color después de la verificación
-    const hoverColor = document.querySelector('script[src="http://localhost:3000/captcha.js"]').getAttribute('data-hover-color') || '#3a8cb1'; // Color de hover por defecto
+    const buttonColor = document.querySelector('script[src="https://captcha-library.vercel.app/captcha.js"]').getAttribute('data-button-color') || '#4b90cd'; // Color por defecto
+    const textColor = document.querySelector('script[src="https://captcha-library.vercel.app/captcha.js"]').getAttribute('data-text-color') || '#ffffff'; // Color de texto por defecto
+    const verifiedColor = document.querySelector('script[src="https://captcha-library.vercel.app/captcha.js"]').getAttribute('data-verified-color') || '#ffffff'; // Color después de la verificación
+    const hoverColor = document.querySelector('script[src="https://captcha-library.vercel.app/captcha.js"]').getAttribute('data-hover-color') || '#3a8cb1'; // Color de hover por defecto
 
     if (forms.length > 0) {
         forms.forEach((form) => {
