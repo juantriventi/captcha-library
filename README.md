@@ -9,7 +9,7 @@ captcha-library es una sencilla solución de verificación CAPTCHA que ayuda a p
 [Link a github](https://github.com/juantriventi/captcha-library)
 
 El uso es muy simple. Solo con importar este script (<script src="https://captcha-library.vercel.app/captcha.js" data-button-color="#4b90cd" data-text-color="#ffffff" data-verified-color="#000000" data-hover-color="green" defer></script>
-) en el head de tu HTML5, todos tus <form> tendran previo al boton de submit una validacion del captcha.
+) en el head de tu HTML5, todos tus form tendran previo al boton de submit una validacion del captcha.
 
 
 ## Customización
